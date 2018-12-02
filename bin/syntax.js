@@ -18,7 +18,20 @@
 				const row = document.createElement('div');
 				row.className = 'row';
 				const new_line = (line || '\r\n');
-				row.appendChild(document.createTextNode(new_line));
+				new_line.split('')
+					.every(
+						(c, k, arr) => {
+							if (c === '\t') {
+								const tab = document.createElement('span');
+								tab.className = 'tab';
+								tab.appendChild(document.createTextNode('\t'));
+								row.appendChild(tab);
+								return true;
+							}
+							row.appendChild(document.createTextNode(new_line.substring(k)));
+							return false;
+						}
+					)
 				listing.appendChild(row);
 			});
 		console.log(listing.innerHTML);
