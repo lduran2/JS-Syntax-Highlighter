@@ -1,0 +1,16 @@
+.program-listing, .row:nth-child(2n) {
+	background-color: silver;
+}
+
+.program-listing {
+	padding: 1em;
+	padding-right: 0;
+}
+
+.row {
+	padding-left: 4em;
+}
+
+.row:nth-child(2n+1) {
+	background-color: yellow;
+}

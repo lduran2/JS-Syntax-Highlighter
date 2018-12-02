@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8' />
+		<title>Tests</title>
+		<link rel='stylesheet' href='../bin/syntax-highlight.css' />
+		<script src='../bin/syntax.js'></script>
+	</head>
+	<body>
+		<pre class='program-listing'></pre>
+		<script>
+			(() => {
+				document.addEventListener('DOMContentLoaded', (e) => { 
+					const programListing = document.getElementsByClassName('program-listing')[0];
+					const req = new XMLHttpRequest();
+					req.open('GET', document.getElementsByTagName('script')[0].src);
+					req.onload = (() => {
+						programListing.appendChild(
+							document.createTextNode(req.response)
+						);
+					});
+					req.send()
+				});
+			})();
+		</script>
+	</body>
+</html>
