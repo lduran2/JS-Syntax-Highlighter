@@ -1,4 +1,8 @@
-.program-listing, .row:nth-child(2n) {
+.program-listing, .row:nth-child(2n+1) {
+	background-color: #ddd;
+}
+
+.row:nth-child(2n) {
 	background-color: silver;
 }
 
@@ -11,11 +15,12 @@
 	padding-left: 4em;
 }
 
-.row:nth-child(2n+1) {
-	background-color: yellow;
+.tab {
+	display: inline-block;
+	width: 2em;
 }
 
-.tab {
-	width: 2em;
-	display: inline-block;
+.keyword {
+	color: blue;
+	font-style: italic;
 }

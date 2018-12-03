@@ -7,20 +7,18 @@
 		<script src='../bin/syntax.js'></script>
 	</head>
 	<body>
-		<pre class='program-listing'></pre>
+		<pre class='program-listing syntax-javascript'></pre>
 		<script>
 			(() => {
-				document.addEventListener('DOMContentLoaded', (e) => { 
-					const programListing = document.getElementsByClassName('program-listing')[0];
-					const req = new XMLHttpRequest();
-					req.open('GET', document.getElementsByTagName('script')[0].src);
-					req.onload = (() => {
-						programListing.appendChild(
-							document.createTextNode(req.response)
-						);
-					});
-					req.send()
+				const programListing = document.getElementsByClassName('program-listing')[0];
+				const req = new XMLHttpRequest();
+				req.open('GET', document.getElementsByTagName('script')[0].src);
+				req.onload = (() => {
+					programListing.appendChild(
+						document.createTextNode(req.response)
+					);
 				});
+				req.send()
 			})();
 		</script>
 	</body>
